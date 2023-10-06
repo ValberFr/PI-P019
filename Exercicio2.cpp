@@ -30,6 +30,26 @@ public:
         }
     }
 
+    bool isEqual(const ConjuntoItens& outro) const {
+        if (itens.size() != outro.itens.size()) {
+            return false;
+        }
+        for (const auto& item : itens) {
+            if (!outro.contem(item)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    void imprimir() const {
+        for (const auto& item : itens) {
+            cout << item << " ";
+        }
+        cout << endl;
+    }
+};
+
 int main() {
     ConjuntoItens A, B, C;
 
