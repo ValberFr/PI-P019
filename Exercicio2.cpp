@@ -30,6 +30,23 @@ public:
         }
     }
 
+    bool contem(const string& item) const {
+        for (const auto& it : itens) {
+            if (it == item) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    ConjuntoItens unir(const ConjuntoItens& outro) const {
+        ConjuntoItens resultado(itens);
+        for (const auto& item : outro.itens) {
+            resultado.inserir(item);
+        }
+        return resultado;
+    }
+
 int main() {
     ConjuntoItens A, B, C;
 
