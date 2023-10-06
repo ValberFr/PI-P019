@@ -30,4 +30,42 @@ public:
         }
     }
 
+int main() {
+    ConjuntoItens A, B, C;
+
+    A.inserir("maca");
+    A.inserir("banana");
+    B.inserir("banana");
+    B.inserir("cereja");
+    C.inserir("maca");
+    C.inserir("cereja");
+
+    cout << "Conjunto A: ";
+    A.imprimir();
+    cout << "Conjunto B: ";
+    B.imprimir();
+    cout << "Conjunto C: ";
+    C.imprimir();
+
+    ConjuntoItens D = A.unir(B);
+    cout << "Conjunto D (A uniao B): ";
+    D.imprimir();
+
+    D = A.interseccao(C);
+    cout << "Conjunto D (A interseccao C): ";
+    D.imprimir();
+
+    D = B.diferenca(C);
+    cout << "Conjunto D (B - C): ";
+    D.imprimir();
+
+    D = A.diferenca(C).unir(C.diferenca(A)); // Diferença simétrica
+    cout << "Conjunto D (Diferenca simetrica A e C): ";
+    D.imprimir();
+
+    bool saoIguais = A.isEqual(B);
+    cout << "A é igual a B: " << saoIguais << endl;
+
+    return 0;
+}
     
