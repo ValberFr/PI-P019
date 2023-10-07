@@ -1,3 +1,5 @@
+//--------- João -----------------
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -30,6 +32,46 @@ public:
         }
     }
 
+//---------- Kayque -----------------
+
+    bool contem(const string& item) const {
+        for (const auto& it : itens) {
+            if (it == item) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    ConjuntoItens unir(const ConjuntoItens& outro) const {
+        ConjuntoItens resultado(itens);
+        for (const auto& item : outro.itens) {
+            resultado.inserir(item);
+        }
+        return resultado;
+    }
+
+// ---------------------- Gabriel --------------------
+
+    ConjuntoItens interseccao(const ConjuntoItens& outro) const {
+        ConjuntoItens resultado;
+        for (const auto& item : itens) {
+            if (outro.contem(item)) {
+                resultado.inserir(item);
+            }
+        }
+        return resultado;
+    }
+    ConjuntoItens diferenca(const ConjuntoItens& outro) const {
+        ConjuntoItens resultado(itens);
+        for (const auto& item : outro.itens) {
+            resultado.excluir(item);
+        }
+        return resultado;
+    }
+
+//---------------------- Greg --------------------
+
     bool isEqual(const ConjuntoItens& outro) const {
         if (itens.size() != outro.itens.size()) {
             return false;
@@ -49,7 +91,7 @@ public:
         cout << endl;
     }
 };
-
+//----------------------- Valber -----------------------------
 int main() {
     ConjuntoItens A, B, C;
 
@@ -88,4 +130,3 @@ int main() {
 
     return 0;
 }
-    
