@@ -1,4 +1,3 @@
-//--------- João -----------------
 
 #include <iostream>
 #include <vector>
@@ -32,8 +31,6 @@ public:
         }
     }
 
-//---------- Kayque -----------------
-
     bool contem(const string& item) const {
         for (const auto& it : itens) {
             if (it == item) {
@@ -51,8 +48,6 @@ public:
         return resultado;
     }
 
-// ---------------------- Gabriel --------------------
-
     ConjuntoItens interseccao(const ConjuntoItens& outro) const {
         ConjuntoItens resultado;
         for (const auto& item : itens) {
@@ -69,8 +64,6 @@ public:
         }
         return resultado;
     }
-
-//---------------------- Greg --------------------
 
     bool isEqual(const ConjuntoItens& outro) const {
         if (itens.size() != outro.itens.size()) {
@@ -91,7 +84,7 @@ public:
         cout << endl;
     }
 };
-//----------------------- Valber -----------------------------
+
 int main() {
     ConjuntoItens A, B, C;
 
@@ -121,7 +114,7 @@ int main() {
     cout << "Conjunto D (B - C): ";
     D.imprimir();
 
-    D = A.diferenca(C).unir(C.diferenca(A)); // Diferença simétrica
+    D = A.diferenca(C).unir(C.diferenca(A)); 
     cout << "Conjunto D (Diferenca simetrica A e C): ";
     D.imprimir();
 
